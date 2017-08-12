@@ -4,9 +4,16 @@ import java.util.Iterator;
 
 public class CommandLineView {
 	
-	private RentABike rentaBike;
-	public CommandLineView() {
-		rentaBike = new RentABike("Bruce's Bikes"); 
+	private RentABikeService rentaBike;
+	
+	public CommandLineView() {}
+	
+	public void setRentaBike(RentABikeService rentaBike) {
+		this.rentaBike = rentaBike;
+	}
+	
+	public RentABikeService getRentaBike() {
+		return this.rentaBike;
 	}
 	
 	public void printAllBikes() {
@@ -16,11 +23,6 @@ public class CommandLineView {
 			Bike bike = (Bike)iter.next();
 			System.out.println(bike.toString());
 		}
-	}
-
-	public static final void main(String[] args) {
-		CommandLineView clv = new CommandLineView();
-		clv.printAllBikes();
 	}
 
 }
