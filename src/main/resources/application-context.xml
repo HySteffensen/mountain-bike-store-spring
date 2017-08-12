@@ -3,5 +3,13 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+	<bean id="rentaBike" class="com.hTools.mbs.RentABikeImpl">
+		<property name="storeName">
+			<value>"Bruce's Bikes"</value>
+		</property>
+	</bean>
 	
+	<bean id="commandLineView" class="com.hTools.mbs.CommandLineView">
+		<property name="rentaBike" ref="rentaBike"/>
+	</bean>
 </beans>
